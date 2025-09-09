@@ -43,7 +43,7 @@ return `${day} ${hours}:${minutes}`;
 
 function searchCity(city)  {
 let apiKey= "41f1114932ef4b8aoc0c3tdb5bcfa9883";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query={query}&key={key}`;
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 axios.get(apiUrl).then(refreshWeather);
 }
 
@@ -56,7 +56,7 @@ function handleSearchSubmit(event) {
 }
 
 let searchFormElement = document.querySelector("#search-form");
-searchFormElement.addEventListener("submit", handleSearchSubmit);
+searchFormElement.addEventListener("submit",handleSearchSubmit);
 
 searchCity("Bloemfontein");
 
